@@ -685,7 +685,7 @@
         (function() {
             const smsButton = document.getElementById('smsButton');
             const phone = "01025991095"; 
-            const body = "[TCM 회원권] 입회 상담 신청합니다. 성함:";
+            const body = "[TCM 회원권] 입회 상담 신청합니다.\n\n성함:\n관심회원권: (골드, 다이아몬드)";
             const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             smsButton.href = `sms:${phone}${isIOS ? '&' : '?'}body=${encodeURIComponent(body)}`;
         })();
