@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCM GOLF | 일본 4개 지역 20여개 골프장 통합 평생 회원권</title>
+    <title>JAPAN GOLF | 일본 명문 골프 평생 회원권 통합 셀렉션</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -13,718 +13,597 @@
             color: #111;
             line-height: 1.6;
         }
-        .text-gradient {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* [3] 대표님 지정 모바일 가독성 표준 타이포그래피 */
+        .m-title { font-size: 26px; font-weight: 900; line-height: 1.35; }
+        .m-subtitle { font-size: 20px; font-weight: 800; line-height: 1.4; }
+        .m-body { font-size: 16px; font-weight: 700; line-height: 1.6; }
+        .m-desc { font-size: 15px; font-weight: 500; line-height: 1.5; }
+
+        @media (min-width: 768px) {
+            .m-title { font-size: 48px; }
+            .m-subtitle { font-size: 26px; }
+            .m-body { font-size: 18px; }
+            .m-desc { font-size: 16px; }
         }
-        .bg-cool {
-            background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
-        }
+
+        .bg-cool { background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%); }
         .bg-emerald-600 { background-color: #059669; }
         .text-emerald-600 { color: #059669; }
         .bg-emerald-950 { background-color: #064e3b; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .sticky-cta {
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-        }
-        section {
-            padding: 100px 20px;
-        }
+        .border-gold { border-color: #C6A75E; }
+        .text-gold { color: #C6A75E; }
+        .bg-gold { background-color: #C6A75E; }
         
+        section { padding: 80px 20px; border-b: 1px solid #f3f4f6; }
         @media (max-width: 640px) {
-            section {
-                padding: 50px 20px; 
-            }
-            .hero-title {
-                font-size: 1.85rem !important; 
-                line-height: 1.3 !important;
-            }
-            header p.text-lg {
-                font-size: 1rem !important; 
-                line-height: 1.5 !important;
-            }
-            h2 {
-                font-size: 1.55rem !important; 
-                line-height: 1.4 !important;
-            }
-            h3 {
-                font-size: 1.3rem !important;
-            }
-            p.text-xl, p.text-2xl {
-                font-size: 1.05rem !important; 
-            }
-            .text-5xl {
-                font-size: 2.2rem !important;
-            }
-            .membership-card {
-                padding: 30px 20px !important; 
-            }
-            .weather-box .text-2xl {
-                font-size: 1.25rem !important;
-            }
-            input, select, textarea {
-                font-size: 0.95rem !important;
-            }
-            #consultForm button {
-                font-size: 1.1rem !important;
-                padding: 15px !important;
-            }
+            section { padding: 50px 16px; }
         }
 
-        .membership-card:hover {
-            transform: translateY(-10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .weather-box {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+        .membership-card { transition: all 0.3s ease; }
+        .membership-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
     </style>
 </head>
 <body class="antialiased">
 
+    <!-- 상단 내비게이션 -->
     <nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-            <div class="text-xl font-extrabold tracking-tighter text-emerald-900 italic">
-                TCM GOLF MEMBERSHIP
+            <div class="text-lg font-extrabold tracking-tighter text-emerald-900 italic">
+                JAPAN GOLF SELECTION
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-bold text-gray-600">
-                <a href="#concept" class="hover:text-emerald-600 transition">회원권소개</a>
-                <a href="#location1" class="hover:text-emerald-600 transition">지역별코스</a>
-                <a href="#pricing" class="hover:text-emerald-600 transition">회원권안내</a>
-            </div>
-            <a href="#inquiry" class="bg-emerald-600 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-100">
+            <a href="#inquiry" class="bg-emerald-600 text-white px-4 py-2 rounded-full m-desc font-bold hover:bg-emerald-700 transition">
                 상담신청
             </a>
         </div>
     </nav>
 
-<header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden" style="background-color: #050807;">
-    <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80&w=2000" 
-             class="w-full h-full object-cover opacity-20 mix-blend-overlay">
-        <div class="absolute inset-0" style="background: radial-gradient(circle at center, rgba(6, 78, 59, 0.4) 0%, #050807 100%);"></div>
-    </div>
-
-    <div class="absolute inset-0 pointer-events-none opacity-40">
-        <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-emerald-500/10 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-amber-500/5 rounded-full blur-[120px] animate-pulse"></div>
-    </div>
-
-    <div class="max-w-5xl mx-auto text-center px-6 relative z-10">
-        <div class="flex justify-center gap-3 md:gap-6 mb-10 md:mb-16">
-            <div class="bg-white/5 backdrop-blur-xl px-4 py-3 md:px-8 md:py-5 rounded-2xl md:rounded-[2rem] border border-white/10 shadow-2xl flex-1 max-w-[160px] md:max-w-none">
-                <p class="text-[9px] md:text-[10px] font-black text-emerald-400 tracking-widest mb-1 uppercase">Summer</p>
-                <p class="text-lg md:text-3xl font-black text-white tracking-tighter">북해도 21~24°C</p>
-            </div>
-            <div class="bg-emerald-950/60 backdrop-blur-xl px-4 py-3 md:px-8 md:py-5 rounded-2xl md:rounded-[2rem] border border-emerald-500/30 shadow-2xl flex-1 max-w-[160px] md:max-w-none">
-                <p class="text-[9px] md:text-[10px] font-black text-amber-400 tracking-widest mb-1 uppercase">Winter</p>
-                <p class="text-lg md:text-3xl font-black text-white tracking-tighter">구마모토 10°C</p>
-            </div>
+    <!-- [STEP 1: 공감] HERO SECTION (강력한 메시지 변경) -->
+    <header class="relative pt-32 pb-16 overflow-hidden" style="background-color: #050807;">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-15 mix-blend-overlay">
         </div>
 
-        <div class="mb-6 md:mb-10 inline-block">
-            <span class="px-4 py-1.5 md:px-6 md:py-2 rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase" 
-                  style="background: linear-gradient(135deg, #6E5520 0%, #C6A75E 50%, #6E5520 100%); color: #fff; box-shadow: 0 10px 30px rgba(110, 85, 32, 0.4);">
-                👑 TCM Foundation Membership
-            </span>
-        </div>
-
-        <h1 class="hero-title text-3xl md:text-7xl lg:text-8xl font-black mb-6 md:mb-10 leading-[1.2] md:leading-[1.1] tracking-tight text-white">
-            일본 골프 <span style="background: linear-gradient(to right, #F5E6B3, #C6A75E); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">평생 멤버쉽</span><br class="md:hidden">
-            TCM 회원권 소식
-        </h1>
-
-        <p class="text-sm md:text-xl lg:text-2xl text-slate-400 mb-10 md:mb-16 font-normal leading-relaxed max-w-2xl mx-auto px-2">
-            북해도부터 오사카, 히로시마, 구마모토까지 TCM 하나로!<br class="hidden md:block">
-            <br>성수기 예약 전쟁은 끝,<br> <span class="text-white font-medium">일본 현지 골프장 발행 정식 회원권의 가치</span>
-        </p>
-        
-        <div class="flex flex-col items-center justify-center gap-6 md:gap-8 mb-16">
-            <a href="#inquiry" class="group relative w-full md:w-auto overflow-hidden px-8 py-5 md:px-16 md:py-7 rounded-2xl transition-all shadow-xl" 
-               style="background: linear-gradient(135deg, #C6A75E 0%, #9F7B2E 100%);">
-                <div class="absolute inset-0 w-full h-full bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                <span class="relative text-lg md:text-2xl font-black text-white">바로 1차 회원 혜택 상담하기</span>
-            </a>
-            <div class="flex flex-col items-center">
-                <p class="text-xs md:text-sm font-bold text-amber-500 tracking-widest">회원권 구좌 마감 임박</p>
-                <p class="text-[10px] md:text-xs text-slate-500 font-medium mt-1">현재 실시간 문의 11건</p>
-            </div>
-        </div>
-
-        <div class="max-w-sm md:max-w-lg mx-auto">
-            <div class="bg-black/40 border border-white/5 rounded-2xl p-4 shadow-2xl">
-                <div id="rolling-ticker" class="flex items-center justify-center gap-3 text-slate-400">
-                    <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    <span id="ticker-content" class="font-bold text-[11px] md:text-sm tracking-tight">
-                        프리미엄 가입 데이터 분석 중...
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-    <section id="concept" class="py-12 bg-white border-y border-gray-50">
-        <div class="max-w-5xl mx-auto px-5 grid grid-cols-2 md:grid-cols-4 gap-10">
-            <div class="text-center">
-                <p class="text-4xl font-black text-emerald-600 mb-2">20개+</p>
-                <p class="text-xs font-bold text-gray-500 tracking-widest uppercase">이용 가능 골프장</p>
-            </div>
-            <div class="text-center md:border-l border-gray-100">
-                <p class="text-4xl font-black text-emerald-600 mb-2">무기명</p>
-                <p class="text-xs font-bold text-gray-500 tracking-widest uppercase">사계절 위임 가능</p>
-            </div>
-            <div class="text-center border-l border-gray-100">
-                <p class="text-4xl font-black text-emerald-600 mb-2">0원</p>
-                <p class="text-xs font-bold text-gray-500 tracking-widest uppercase">평생 연회비 없음</p>
-            </div>
-            <div class="text-center border-l border-gray-100">
-                <p class="text-4xl font-black text-emerald-600 mb-2">정식</p>
-                <p class="text-xs font-bold text-gray-500 tracking-widest uppercase">일본 골프장 발행</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white">
-        <div class="max-w-4xl mx-auto px-5">
-            <div class="text-center mb-20 fade-in">
-                <h2 class="text-3xl md:text-5xl font-black mb-8 text-gray-900 leading-tight">일본 골프의 종착역,<br>TCM 멤버쉽 하나로 끝납니다</h2>
-                <div class="w-20 h-1.5 mx-auto bg-emerald-600 mb-10"></div>
-                <p class="text-gray-500 text-xl font-medium leading-relaxed">계절별로 골라가는 재미!<br> 봄·가을엔 오사카, 여름엔 북해도,<br>겨울엔 따뜻한 구마모토까지 사계절 완벽한 회원권</p>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h1 class="m-title mb-4 tracking-tight text-white leading-tight">
+                일본 골프,<br>
+                <span style="background: linear-gradient(to right, #F5E6B3, #C6A75E); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">예약이 아니라 회원의 권리</span>로 즐기십시오.
+            </h1>
+            
+            <div class="max-w-md mx-auto my-6 bg-white/5 border border-white/10 rounded-xl p-5 text-left text-slate-300 space-y-2 mt-4 m-body">
+                <p>✔️ 일본 명문 골프장 회원가 이용</p>
+                <p>✔️ 평생 연회비 없음</p>
+                <p>✔️ 정식 회원권 소유</p>
+                <p>✔️ 양도 가능</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-10 rounded-[40px] bg-gray-50 fade-in shadow-sm hover:shadow-md transition">
-                    <div class="text-5xl mb-6">🚫</div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">제약 없음</h3>
-                    <p class="text-gray-600 leading-relaxed">횟수 제한, 일수 제한,<br>연회비까지 일절 없습니다</p>
-                </div>
-                <div class="p-10 rounded-[40px] bg-gray-50 fade-in shadow-sm hover:shadow-md transition">
-                    <div class="text-5xl mb-6">🤝</div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">자산 가치</h3>
-                    <p class="text-gray-600 leading-relaxed">취득세·양도세 0원!<br>3년 후부터 자유로운 양도</p>
-                </div>
-                <div class="p-10 rounded-[40px] bg-gray-50 fade-in shadow-sm hover:shadow-md transition">
-                    <div class="text-5xl mb-6">🍱</div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">시내 인프라</h3>
-                    <p class="text-gray-600 leading-relaxed">호텔이 시내에 있어<br>맛집, 관광, 쇼핑까지 한 번에</p>
-                </div>
-            </div>
-
-            <div class="mt-20 p-10 md:p-16 rounded-[50px] bg-emerald-950 text-white text-center fade-in relative overflow-hidden shadow-2xl">
-                <div class="relative z-10">
-                    <p class="text-2xl md:text-3xl font-medium leading-snug mb-4 text-emerald-200">대한민국 골퍼들이 선호하는 1순위!</p>
-                   <p class="text-[23px] md:text-[27px] font-black leading-tight">
-    "오사카·히로시마·구마모토·북해도·도쿄"<br> 
-    <span class="text-white underline decoration-emerald-500 underline-offset-8">‘5개 지역 20개+ 구장’</span>을<br>자유롭게, 언제든지 이용!
-</p>
-                </div>
-                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-600 rounded-full blur-[100px] opacity-20"></div>
-            </div>
-        </div>
-    </section>
-
- <section id="location1" class="bg-gray-50 overflow-hidden">
-    <div class="max-w-6xl mx-auto px-5">
-        <div class="text-center mb-16 fade-in">
-            <h2 class="text-2xl md:text-5xl font-black mb-6 text-gray-900 leading-tight">골라 치는 재미,<br> <span class="text-emerald-600">일본 5개 지역</span></h2>
-            <p class="text-gray-500 text-lg md:text-xl font-medium">국내 유일 일본 Premium Multi 회원권 |<br> 5개지역 20개+ 골프장</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="p-8 rounded-[40px] bg-white shadow-sm hover:shadow-md transition border border-gray-100">
-                <div class="flex items-center justify-between mb-6">
-                    <div class="flex items-center gap-4">
-                        <span class="text-2xl md:text-3xl">❄️</span>
-                        <h3 class="text-xl md:text-2xl font-black text-gray-900 uppercase">Hokkaido</h3>
-                    </div>
-                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[9px] md:text-xs font-bold">HOTEL 3 / GOLF 6</span>
-                </div>
-                <p class="text-gray-600 font-bold mb-4 italic text-sm md:text-base">"아사히가와·타카스CC 회원 특전"</p>
-                <ul class="text-xs md:text-sm text-gray-500 space-y-2 mb-6 font-medium">
-                    <li>⛳ 주요코스: 아사히가와CC, 타카스CC 등 6개 코스</li>
-                    <li>🏨 숙박: 북해도 지역 엄선 호텔 3곳</li>
-                    <li>🛫 특징: 여름 시즌 가장 선호도 높은 시원한 라운드</li>
-                </ul>
-            </div>
-
-            <div class="p-8 rounded-[40px] bg-white fade-in shadow-sm hover:shadow-md transition border border-gray-100">
-                <div class="flex items-center justify-between mb-6">
-                    <div class="flex items-center gap-4">
-                        <span class="text-2xl md:text-3xl">⛩️</span>
-                        <h3 class="text-xl md:text-2xl font-black text-gray-900 uppercase">Hiroshima</h3>
-                    </div>
-                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold">Hotel 3 / Golf 3</span>
-                </div>
-                <p class="text-gray-600 font-bold mb-4 italic text-sm md:text-base">"★미와CC 회원권 증서 카드 발행"</p>
-                <ul class="text-xs md:text-sm text-gray-500 space-y-2 mb-6 font-medium">
-                    <li>⛳ 주요코스: 미와CC 포함 3개 명문 코스</li>
-                    <li>🏨 숙박: 히로시마 지역 엄선 호텔 3곳</li>
-                    <li>🛫 특징: 정식 회원권 증서 발급으로 자산 가치 확보</li>
-                </ul>
-            </div>
-
-            <div class="p-8 rounded-[40px] bg-white fade-in shadow-sm hover:shadow-md transition border border-gray-100">
-                <div class="flex items-center justify-between mb-6">
-                    <div class="flex items-center gap-4">
-                        <span class="text-2xl md:text-3xl">🌋</span>
-                        <h3 class="text-xl md:text-2xl font-black text-gray-900 uppercase">Kyushu</h3>
-                    </div>
-                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold">Hotel 3 / Golf 9</span>
-                </div>
-               <p class="text-gray-600 font-bold mb-4 italic text-[13px] md:text-[15px]">"조난CC(일본 TOP5) & 아소유노타니CC 혜택"</p>
-                <ul class="text-xs md:text-sm text-gray-500 space-y-2 mb-6 font-medium">
-                    <li>⛳ 주요코스: 조난CC, 아소유노타니CC 등 9개 코스</li>
-                    <li>🏨 숙박: 규슈 지역 엄선 호텔 3곳</li>
-                    <li>🛫 특징: 일본 내 최상위 명문 코스를 회원가로 이용</li>
-                </ul>
-            </div>
-
-            <div class="p-8 rounded-[40px] bg-white fade-in shadow-sm hover:shadow-md transition border border-gray-100">
-                <div class="flex items-center justify-between mb-6">
-                    <div class="flex items-center gap-4">
-                        <span class="text-2xl md:text-3xl">🏯</span>
-                        <h3 class="text-xl md:text-2xl font-black text-gray-900 uppercase">Osaka</h3>
-                    </div>
-                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold">Hotel 3 / Golf 13</span>
-                </div>
-                <p class="text-gray-600 font-bold mb-4 italic text-sm md:text-base">"최다 골프장 보유, 압도적인 인프라"</p>
-                <ul class="text-xs md:text-sm text-gray-500 space-y-2 mb-6 font-medium">
-                    <li>⛳ 주요코스: 오사카 및 인근 지역 13개 골프장 제휴</li>
-                    <li>🏨 숙박: 오사카 시내 인접 호텔 3곳</li>
-                    <li>🛫 특징: 쇼핑, 먹거리, 라운드를 한 번에 즐기는 지역</li>
-                </ul>
-            </div>
-
-            <div class="p-8 rounded-[40px] bg-white fade-in shadow-sm hover:shadow-md transition border border-gray-100 md:col-span-2">
-                <div class="flex items-center justify-between mb-6">
-                    <div class="flex items-center gap-4">
-                        <span class="text-2xl md:text-3xl">🗼</span>
-                        <h3 class="text-xl md:text-2xl font-black text-gray-900 uppercase">Tokyo</h3>
-                    </div>
-                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold">Hotel 1 / Golf 5</span>
-                </div>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div>
-                        <p class="text-gray-600 font-bold mb-4 italic text-sm md:text-base">"수도권 핵심 라인업 5개 골프장 회원가 혜택"</p>
-                        <ul class="text-xs md:text-sm text-gray-500 space-y-2 font-medium">
-                            <li>⛳ 주요코스: 동경 수도권 지역 5개 골프장</li>
-                            <li>🏨 숙박: 접근성 좋은 전용 호텔 1곳</li>
-                        </ul>
-                    </div>
-                    <div class="bg-emerald-50 p-4 rounded-2xl flex items-center justify-center">
-                        <p class="text-emerald-800 text-xs md:text-sm font-black leading-relaxed text-center">
-                            💡 창립 회원 특별 혜택:<br>동경 지역 5개 골프장 준회원가 혜택 추가 포함!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="infra" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-5">
-    <div class="text-center mb-16 fade-in">
-        <span class="text-emerald-600 font-black tracking-widest text-sm uppercase mb-4 block">NETWORK INFRA</span>
-        <h2 class="text-[20px] md:text-[40px] font-black text-gray-900 leading-tight">압도적인 스케일,<br>일본 전역 <span class="text-emerald-600">32개 명문 코스</span> 통합 이용</h2>
-    </div>
-</div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div class="bg-gray-50 p-8 rounded-[40px] border border-gray-100 fade-in">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">⛳</div>
-                    <h3 class="text-xl font-black text-gray-900">5개 지역 32개 코스</h3>
-                </div>
-                <ul class="space-y-4 text-sm font-bold text-gray-600">
-                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>오사카</span> <span>13개 코스</span></li>
-                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>동경</span> <span>6개 코스</span></li>
-                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>북해도</span> <span>6개 코스</span></li>
-                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>규슈(구마모토)</span> <span>5개 코스</span></li>
-                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>히로시마</span> <span>3개 코스</span></li>
-                </ul>
-                <p class="mt-6 text-red-600 text-xs font-black bg-red-50 p-3 rounded-xl text-center italic">
-                    ★ 히로시마 미와CC 정식 회원권 증서 발행
-                </p>
-            </div>
-
-            <div class="bg-gray-50 p-8 rounded-[40px] border border-gray-100 fade-in">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">🏨</div>
-                    <h3 class="text-xl font-black text-gray-900">5개 지역 7개 호텔</h3>
-                </div>
-                <div class="space-y-4 text-sm font-bold text-gray-600">
-                    <p class="leading-relaxed">엄선된 <span class="text-emerald-600">시내 중심 호텔</span> 사용으로 라운드 후 맛집, 쇼핑, 관광 최적화</p>
-                    <div class="bg-white p-4 rounded-2xl shadow-sm">
-                        <p class="text-xs text-gray-400 mb-1">Perfect Access</p>
-                        <p class="text-gray-900 italic">"공항 ↔ 호텔 ↔ 골프장"</p>
-                        <p class="text-emerald-600 text-lg font-black">모든 이동 30분 이내</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-emerald-900 p-8 rounded-[40px] text-white fade-in shadow-2xl">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">✈️</div>
-                    <h3 class="text-xl font-black">편리한 직항 노선</h3>
-                </div>
-                <ul class="space-y-3 text-[13px] font-medium opacity-90">
-                    <li class="flex items-center gap-2">● 규슈: 구마모토 공항 직항</li>
-                    <li class="flex items-center gap-2">● 히로시마: 히로시마 공항 직항</li>
-                    <li class="flex items-center gap-2">● 오사카: 간사이 국제공항 직항</li>
-                    <li class="flex items-center gap-2">● 북해도: 이사히카와 공항 직항</li>
-                    <li class="flex items-center gap-2">● 동경: 나리타/나고야 공항 직항</li>
-                </ul>
-                <p class="mt-8 text-emerald-400 text-xs font-black">※ 전국 어디서든 접근 가능한 최상의 루트</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <section class="bg-white pt-4 md:pt-8 pb-20">
-    <div class="max-w-6xl mx-auto px-5">
-        <div class="text-center mb-12 fade-in">
-            <h2 class="text-3xl md:text-5xl font-black mb-6 italic">합리적인 하루 체류비<br> <span class="text-emerald-600">(ALL-INCLUSIVE)</span></h2>
-            <p class="text-gray-500 text-lg font-bold">라운딩부터 숙박, 식사, 송영까지<br> 한 번에 예약하고 해결하세요</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 fade-in">
-            <div class="lg:col-span-1 bg-emerald-50 rounded-[40px] p-8 md:p-10 border border-emerald-100 shadow-sm flex flex-col justify-between">
-                <div>
-                    <h3 class="text-xl md:text-2xl font-black mb-6 text-emerald-900 border-b border-emerald-200 pb-4 italic underline decoration-emerald-300">TCM 회원 이용료</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center bg-white p-5 rounded-3xl shadow-sm">
-                            <span class="font-black text-gray-600 text-base">주중</span>
-                            <span class="text-2xl font-black text-emerald-600 italic">15,000엔~</span>
-                        </div>
-                        <div class="flex justify-between items-center bg-white p-5 rounded-3xl shadow-sm">
-                            <span class="font-black text-gray-600 text-base">주말/공휴일</span>
-                            <span class="text-2xl font-black text-emerald-600 italic">16,000엔~</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-center text-xs text-emerald-700 font-bold mt-8 underline underline-offset-4 leading-relaxed">
-                    ※ 시내 호텔 숙박으로 저녁은 맛집 자유 이용<br>
-                    ※ 일본 현지 32개 골프장 동일 혜택 적용
-                </p>
-            </div>
-
-            <div class="lg:col-span-2 bg-white rounded-[40px] p-8 md:p-10 border border-gray-100 shadow-xl">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-lg font-black mb-4 text-emerald-600 flex items-center gap-2">
-                            <span class="w-1.5 h-5 bg-emerald-600 rounded-full"></span> 포함 사항
-                        </h4>
-                        <ul class="space-y-3 text-sm font-bold text-gray-600">
-                            <li>✅ 18홀 그린피 (전 일정)</li>
-                            <li>✅ 전동 카트비 (셀프 기준)</li>
-                            <li>✅ 전 일정 호텔 숙박 (2인 1실)</li>
-                            <li>✅ 호텔 조식 & 클럽하우스 중식</li>
-                            <li>✅ 호텔 ↔ 골프장 전용 송영</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-black mb-4 text-red-500 flex items-center gap-2">
-                            <span class="w-1.5 h-5 bg-red-500 rounded-full"></span> 불포함 사항
-                        </h4>
-                        <ul class="space-y-3 text-sm font-bold text-gray-600">
-                            <li>❌ 왕복 항공료 및 개인 비용</li>
-                            <li>❌ 일정 내 석식 (자유 식사)</li>
-                            <li>❌ 공항 송영비 (1인/약 6만원)</li>
-                            <li>❌ 여행자 보험</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mt-10 pt-8 border-t border-gray-100">
-                    <p class="text-xs font-black text-gray-400 mb-4 uppercase tracking-widest text-center">TCM 회원권 종류</p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-2xl text-center border border-gray-100">
-                            <p class="text-[10px] text-emerald-600 font-bold mb-1">TCM GOLD</p>
-                            <p class="text-[9px] font-black text-gray-800">기명 1인 + 동반 3인</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-2xl text-center border border-gray-100">
-                            <p class="text-[10px] text-emerald-600 font-bold mb-1">TCM DIAMOND</p>
-                            <p class="text-xs font-black text-gray-800">무기명 4인</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="special-benefits" class="py-16 bg-emerald-50">
-    <div class="max-w-6xl mx-auto px-5">
-    <div class="text-center mb-12 fade-in">
-        <span class="text-emerald-600 font-black tracking-widest text-xs md:text-sm uppercase mb-2 block">SPECIAL PRIVILEGE</span>
-       <h2 class="text-[20px] md:text-[25px] font-black text-gray-900 italic">"오직 TCM 창립 회원에게만 허락된 <br><span class="text-emerald-600">5가지 압도적 특전</span>"</h2>
-    </div>
-</div>
-
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div class="bg-white p-6 rounded-[30px] shadow-sm border border-emerald-100 flex flex-col items-center text-center fade-in">
-                <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl mb-4">⭐</div>
-                <h4 class="font-black text-gray-900 text-sm md:text-base mb-2">회원 대우</h4>
-                <p class="text-[11px] md:text-xs text-gray-500 font-bold leading-relaxed">
-                    <span class="text-red-600">5개 골프장 회원 대우</span><br>
-                    27개 골프장 준회원 대우
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-[30px] shadow-sm border border-emerald-100 flex flex-col items-center text-center fade-in">
-                <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl mb-4">💳</div>
-                <h4 class="font-black text-gray-900 text-sm md:text-base mb-2">비용 절감</h4>
-                <p class="text-[11px] md:text-xs text-gray-500 font-bold leading-relaxed">
-                    평생 <span class="text-emerald-600">연회비 없음</span><br>
-                    (창립 회원 한정 특전)
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-[30px] shadow-sm border border-emerald-100 flex flex-col items-center text-center fade-in">
-                <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl mb-4">🚐</div>
-                <h4 class="font-black text-gray-900 text-sm md:text-base mb-2">직영 서비스</h4>
-                <p class="text-[11px] md:text-xs text-gray-500 font-bold leading-relaxed">
-                    현지 직영 송영 및 안내<br>
-                    <span class="text-red-600 font-black">원하는 일정</span> 상시 가능
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-[30px] shadow-sm border border-emerald-100 flex flex-col items-center text-center fade-in">
-                <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl mb-4">🔄</div>
-                <h4 class="font-black text-gray-900 text-sm md:text-base mb-2">자산 가치</h4>
-                <p class="text-[11px] md:text-xs text-gray-500 font-bold leading-relaxed">
-                    자유로운<br>
-                    <span class="text-emerald-600">양도, 양수 가능</span>
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-[30px] shadow-sm border border-emerald-100 flex flex-col items-center text-center fade-in col-span-2 md:col-span-1">
-                <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl mb-4">⛳</div>
-                <h4 class="font-black text-gray-900 text-sm md:text-base mb-2">무제한 사용</h4>
-                <p class="text-[11px] md:text-xs text-gray-500 font-bold leading-relaxed">
-                    <span class="text-emerald-600">2인 플레이</span> 가능<br>
-                    주중·주말 사용 무제한
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="pricing" class="bg-gray-50">
-        <div class="max-w-6xl mx-auto px-5">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-black mb-6 text-gray-900 italic underline decoration-emerald-500 underline-offset-8">창립 1차 회원권 구성</h2>
-                <p class="text-gray-500 text-xl font-medium">매번 번거롭게 예약하기 힘든 일본 골프<br> 이젠 평생 자산형 회원권을 마련하세요.</p>
-                <div class="mt-4 inline-block bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full font-bold text-xs">
-                    ✔ 평생 연회비 면제 (🌟1차 회원 특전)
-                </div>
-            </div>
-
-            <div class="max-w-4xl mx-auto mb-16 bg-red-50 border-2 border-red-100 rounded-[35px] p-5 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm fade-in">
-                <div class="flex items-center gap-3">
-                    <span class="relative flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
-                    </span>
-                    <p class="text-red-700 font-bold text-xs tracking-tighter">🚨 1차 분양 잔여 구좌 긴급 마감 임박!</p>
-                </div>
-                
-                <div class="flex gap-6 text-xs font-bold text-gray-700">
-                    <div class="flex flex-col items-center">
-                        <span class="text-gray-400 text-[10px] mb-0.5 font-bold italic">GOLD</span>
-                        <span class="underline decoration-red-400 decoration-1 text-[13px]">5구좌 남음</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span class="text-gray-400 text-[10px] mb-0.5 font-bold italic">DIAMOND</span>
-                        <span class="text-red-600 animate-pulse text-[13px]">마감 임박 (2)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-                <div class="membership-card bg-white rounded-[50px] p-10 shadow-xl border border-gray-100 flex flex-col fade-in relative overflow-hidden">
-                    <div class="text-emerald-600 font-black mb-4 tracking-widest text-xs uppercase italic">Individual & Couple</div>
-                    <h3 class="text-3xl font-black mb-6 text-gray-900 italic">골드 회원권</h3>
-                    <div class="text-5xl font-black mb-3 text-emerald-900 tracking-tighter">1,980<span class="text-lg font-bold text-gray-400 ml-1">만원</span></div>
-                    <div class="text-sm font-black text-emerald-700 mb-8 pb-6 border-b border-gray-50 italic">기명 1인 + 동반 3인</div>
-                    <ul class="text-left text-base space-y-4 mb-10 flex-grow text-gray-600 font-bold">
-                        <li>● 계약자(기명인) 예약 가능</li>
-                        <li>● 횟수 제한 없는 평생 이용권</li>
-                        <li>● 법인 및 개인 입회 모두 가능</li>
-                        <li>● 법인 세금계산서 발행 지원</li>
-                    </ul>
-                    <a href="#inquiry" class="w-full py-5 bg-gray-100 rounded-3xl text-center font-black text-gray-800 hover:bg-emerald-600 hover:text-white transition shadow-sm">선택하기</a>
-                </div>
-
-                <div class="membership-card bg-emerald-900 text-white rounded-[50px] p-10 shadow-2xl flex flex-col transform scale-105 relative z-10 fade-in border-[6px] border-emerald-400">
-                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-emerald-400 text-emerald-900 px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-tighter shadow-lg">Corporate Best</div>
-                    <div class="text-emerald-400 font-black mb-4 tracking-widest text-xs uppercase italic">Corporate VIP</div>
-                    <h3 class="text-3xl font-black mb-6 italic">다이아몬드</h3>
-                    <div class="text-5xl font-black mb-3 text-emerald-400 tracking-tighter">2,970<span class="text-lg font-bold text-emerald-200/50 ml-1">만원</span></div>
-                    <div class="text-sm font-black text-emerald-300 mb-8 pb-6 border-b border-white/10 italic">무기명 4인 (위임 가능)</div>
-                    <ul class="text-left text-base space-y-4 mb-10 flex-grow font-bold">
-                        <li>● 기업 및 단체 선호도 압도적 1위</li>
-                        <li>● 계약자 예약 후 누구나 위임 가능</li>
-                        <li>● 비즈니스 접대 및 임직원 복지 최적</li>
-                        <li>● 사계절 누구나 제약 없는 이용</li>
-                    </ul>
-                    <a href="#inquiry" class="w-full py-5 bg-emerald-500 rounded-3xl text-center font-black text-white hover:bg-emerald-400 transition shadow-xl">상담 신청</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <section class="bg-gray-50 py-16">
-    <div class="max-w-3xl mx-auto px-5">
-        <h2 class="text-xl md:text-2xl font-black mb-10 text-center text-gray-900">가장 많이 묻는 질문 (FAQ)</h2>
-        <div class="space-y-3">
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                <h4 class="font-bold text-emerald-900 text-sm md:text-base mb-1.5">Q. 명의 변경 및 양도가 가능한가요?</h4>
-                <p class="text-gray-500 text-[12px] md:text-[13px] font-medium leading-relaxed">
-                    네, TCM 회원권은 일본 현지 골프장에서 발행하는 정식 회원권으로, 입회 3년 후부터 자유로운 양도 및 명의 변경이 가능하여 자산 가치 보존이 가능합니다.
-                </p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                <h4 class="font-bold text-emerald-900 text-sm md:text-base mb-1.5">Q. 겨울철이나 여름철 운영은 어떻게 되나요?</h4>
-                <p class="text-gray-500 text-[12px] md:text-[13px] font-medium leading-relaxed">
-                    TCM은 멀티 거점을 보유하고 있습니다. 여름에는 시원한 북해도(21~24도), 겨울에는 따뜻한 구마모토(평균 10도)를 선택하여 사계절 내내 쾌적한 라운딩이 가능합니다.
-                </p>
-            </div>
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                <h4 class="font-bold text-emerald-900 text-sm md:text-base mb-1.5">Q. 법인 무기명의 경우 누구나 이용 가능한가요?</h4>
-                <p class="text-gray-500 text-[12px] md:text-[13px] font-medium leading-relaxed">
-                    네, 맞습니다. 특히 다이아몬드 회원권은 무기명 4인 혜택으로 계약자가 예약 후 지인, 직원, 거래처 등 누구나 위임하여 자유롭게 이용하실 수 있습니다.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-   <section id="inquiry" class="bg-cool relative py-20">
-    <div class="max-w-4xl mx-auto px-5 relative z-10">
-        <div class="bg-white rounded-[40px] md:rounded-[60px] p-6 md:p-20 shadow-[0_30px_100px_rgba(0,0,0,0.1)] border border-emerald-100 fade-in text-center">
-            <h2 class="text-2xl md:text-3xl font-black mb-4 text-gray-900 italic underline decoration-emerald-500 decoration-4 md:decoration-8 underline-offset-8">지금 전문가와 상담하세요</h2>
-            <p class="text-gray-500 mb-8 font-medium text-sm md:text-base">TCM 회원권 한정 구좌 상세 안내를 도와드립니다.</p>
-
-            <div class="mb-12">
-                <a href="https://drive.google.com/uc?export=download&id=1mXZxgDvRWt6VIP3QbAxYmliNjGshwg64" class="inline-flex items-center gap-3 bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-4 rounded-2xl font-bold transition-all border border-gray-200 text-sm md:text-base">
-                    <span>📄</span> TCM 회원권 안내서(PDF) 다운로드
+            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-md mx-auto">
+                <a href="#inquiry" class="w-full px-6 py-3.5 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition text-center m-desc">
+                    무료 안내서 받기 ➔
                 </a>
             </div>
+        </div>
+    </header>
 
-            <form id="consultForm" class="space-y-6 text-left">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" id="userName" name="name" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-emerald-500 outline-none font-bold text-sm md:text-base" placeholder="성함" required>
-                    <input type="tel" id="userTel" name="tel" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-emerald-500 outline-none font-bold text-sm md:text-base" placeholder="연락처" required>
-                </div>
-                <select id="userProduct" name="product" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-emerald-500 outline-none font-black text-emerald-900 appearance-none text-sm md:text-base">
-                    <option value="골드 회원권">관심 회원권: 골드 (기명1+동반3)</option>
-                    <option value="다이아몬드">관심 회원권: 다이아몬드 (무기명4)</option>
-                </select>
-                <textarea id="userMessage" name="message" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-emerald-500 outline-none h-32 font-medium text-sm md:text-base" placeholder="문의 내용을 남겨주세요 (예: 개인/법인 입회 문의)"></textarea>
-                
-                <button type="submit" id="submitBtn" class="w-full bg-emerald-600 text-white p-5 rounded-2xl font-black text-lg md:text-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
-                    상담 신청하고 창립 혜택 받기
-                </button>
-                <p class="text-[10px] md:text-xs text-gray-400 text-center font-bold">※ 고객님의 개인정보는 회원권 상담 목적으로만 안전하게 보관됩니다.</p>
-            </form>
+    <!-- 직관적 지표 요약 (인천·김해 직항, 골프+온천+미식 반영) -->
+    <div class="bg-emerald-950 py-6 px-4 border-y border-emerald-900 text-white">
+        <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="bg-black/20 p-3 rounded-lg">
+                <p class="m-subtitle text-gold">🇯🇵 일본 5개 지역</p>
+                <p class="m-desc text-slate-300 mt-0.5">원하는 권역 자유 선택</p>
+            </div>
+            <div class="bg-black/20 p-3 rounded-lg">
+                <p class="m-subtitle text-gold">⛳ 최대 32개 코스</p>
+                <p class="m-desc text-slate-300 mt-0.5">명문 구장 제휴 네트워크</p>
+            </div>
+            <div class="bg-black/20 p-3 rounded-lg">
+                <p class="m-subtitle text-gold">✈️ 인천 · 김해 직항</p>
+                <p class="m-desc text-slate-300 mt-0.5">공항 이동 동선 최적화</p>
+            </div>
+            <div class="bg-black/20 p-3 rounded-lg">
+                <p class="m-subtitle text-gold">♨️ 골프 + 온천 + 미식</p>
+                <p class="m-desc text-slate-300 mt-0.5">라운딩 후 여정 연계</p>
+            </div>
         </div>
     </div>
-</section>
 
-    <footer class="bg-white py-12 border-t border-gray-100">
-        <div class="max-w-4xl mx-auto px-5 text-center">
-            <div class="text-xl font-black text-emerald-900 mb-6 italic tracking-tighter opacity-80">TCM GOLF MEMBERSHIP</div>
-            <div class="text-[11px] text-gray-400 leading-relaxed font-normal">
-                <p class="mb-4">
-                    일본 프리미엄 골프 회원권 TCM 특별 분양 | 투어클럽 법인 운영팀장 유회경부장<br>
-                    투어클럽 본사: (주)투어클럽 | 대표번호: 010-2599-1095
-                </p>
-                <div class="mb-6 opacity-70">
-                    사업부 주소: 용인시 수지구 광교중앙로338 B동 809호 / A동 427호<br>
-                    사업자번호: 145-88-00771
-                </div>
-                <p class="tracking-wider">© 2026 TCM GOLF MEMBERSHIP. All Rights Reserved.</p>
+    <!-- [STEP 2: 문제 및 해결] 왜 일본 회원권일까요? (비교 서사) -->
+    <section id="why-membership" class="bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">왜 일본 회원권일까요?</h2>
+                <p class="m-body text-emerald-600 mt-2 font-bold">국내 골프장 예약 스트레스와 높은 요금의 명확한 대안</p>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <div class="bg-white border p-6 rounded-2xl">
+                    <div class="text-gray-900 font-bold m-subtitle mb-3">❌ 예약 어렵고 비싼 국내 골프장</div>
+                    <ul class="space-y-2 m-body text-gray-600">
+                        <li>• 주말 예약 확보가 대단히 어려움</li>
+                        <li>• 그린피 및 카트비 지속 상승 부담</li>
+                        <li>• 고가 회원권 대비 낮은 이용 효율</li>
+                    </ul>
+                </div>
+                <div class="bg-emerald-950 p-6 rounded-2xl text-white">
+                    <div class="text-gold font-bold m-subtitle mb-3">✨ 회원 우대 가격의 일본 평생 회원권</div>
+                    <ul class="space-y-2 m-body text-slate-200">
+                        <li>• 주중·주말 정식 회원 우대 요금</li>
+                        <li>• 2인 플레이 가능 및 카트 진입 허용</li>
+                        <li>• 평생 소유 및 자유로운 양도 가능</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 왜 일본 골프가 인기일까요? 인프라 요소 통합 -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 m-body text-gray-700 font-bold text-center">
+                <div class="bg-slate-50 p-4 rounded-xl border">✈️ 직항 노선</div>
+                <div class="bg-slate-50 p-4 rounded-xl border">🍣 맛있는 음식</div>
+                <div class="bg-slate-50 p-4 rounded-xl border">♨️ 온천 휴식</div>
+                <div class="bg-slate-50 p-4 rounded-xl border">🏌️ 사계절 라운드</div>
+                <div class="bg-slate-50 p-4 rounded-xl border">🛍️ 쇼핑 편의</div>
+                <div class="bg-slate-50 p-4 rounded-xl border">🏨 특급 호텔</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [STEP 3: 해결 - 신뢰 구축] 왜 투어클럽인가요? -->
+    <section id="why-tourclub" class="bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">왜 투어클럽인가요?</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 m-body text-gray-700 font-bold text-center mb-8">
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">🤝 일본 골프장 본사 계약</div>
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">📄 정식 회원권 증서 발급</div>
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">🖥️ 한국 상담센터 직접 운영</div>
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">✍️ 정식 계약서 작성</div>
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">🏢 법인 세무 비용 증빙 가능</div>
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">🚐 입회 후 전담 사후 관리</div>
+            </div>
+            
+            <div class="bg-emerald-50/40 p-5 rounded-xl border border-emerald-100 font-bold max-w-xl mx-auto text-center">
+                <h4 class="m-subtitle text-emerald-950 mb-2">📱 카카오톡 하나로 쉽고 빠르게</h4>
+                <div class="flex justify-center gap-6 m-body text-emerald-900 my-2">
+                    <span>✔️ 골프 예약</span>
+                    <span>✔️ 숙소 예약</span>
+                    <span>✔️ 일정 상담</span>
+                </div>
+                <p class="m-desc text-emerald-800 font-medium mt-1">국내 전담 예약 센터를 통해 메시지 한 통으로 복잡한 절차 없이 완수됩니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- [STEP 4: 상품 - TYPE A] TCM 프리미엄 통합형 (시각화 동선) -->
+    <section id="tcm-section" class="bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="m-title text-gray-900">TCM 프리미엄 통합형</h2>
+                <p class="m-body text-emerald-600 font-bold mt-2">제휴 32개 코스로 계절마다 가장 좋은 지역에서 라운드할 수 있습니다.</p>
+            </div>
+
+            <!-- 지도 흐름 느낌의 시각화 동선 배정 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mb-8 font-bold">
+                <div class="bg-slate-50 p-4 rounded-xl border">
+                    <p class="text-emerald-700 m-subtitle">🌸 봄 · 오사카</p>
+                    <p class="m-desc text-gray-500 mt-1">13개 코스 · 미식 쇼핑</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border">
+                    <p class="text-emerald-700 m-subtitle">☀️ 여름 · 북해도</p>
+                    <p class="m-desc text-gray-500 mt-1">6개 코스 · 시원한 기후</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border">
+                    <p class="text-emerald-700 m-subtitle">🍁 가을 · 히로시마</p>
+                    <p class="m-desc text-gray-500 mt-1">수려한 자연 풍광</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border">
+                    <p class="text-emerald-700 m-subtitle">❄️ 겨울 · 규슈</p>
+                    <p class="m-desc text-gray-500 mt-1">따뜻한 기후 · 온천 라운드</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-5 rounded-xl border max-w-2xl mx-auto m-desc text-gray-700 font-medium space-y-1">
+                <p>• <strong>이용 코스 :</strong> 일본 5개 권역 제휴 32개 명문 코스 통합 이용</p>
+                <p>• <strong>연계 숙소 :</strong> 주요 도심 권역 특급 제휴 호텔 매칭</p>
+                <p>• <strong>예약 방식 :</strong> 한국 부킹 데스크를 통한 편리한 사전 확정</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- [STEP 4: 상품 - TYPE B] 쿠마CC 거점형 (상황 흐름 알고리즘 서사 보강) -->
+    <section id="kuma-section" class="bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">왜 많은 골퍼가 쿠마CC를 선택할까요?</h2>
+                <p class="m-body text-amber-700 font-bold mt-2">단일 구장이 아닌 3개 골프장 연계 통합 63홀의 확고한 예약 신뢰성</p>
+            </div>
+            
+            <!-- 알고리즘 흐름형 서사 카드 배치 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-center font-bold">
+                <div class="bg-white p-5 rounded-2xl border">
+                    <p class="text-gray-500 m-desc">주요 시간대 예약이 몰린다면?</p>
+                    <p class="text-amber-700 m-subtitle my-1">▶ 체리CC 예약 배정</p>
+                    <p class="m-desc text-gray-600 font-medium">동일 권역 연계 코스로 밀림 없이 티타임 확보</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border">
+                    <p class="text-gray-500 m-desc">코스 정비나 임시 휴장이 발생한다면?</p>
+                    <p class="text-amber-700 m-subtitle my-1">▶ 크라운CC 교차 예약</p>
+                    <p class="m-desc text-gray-600 font-medium">대체 구장 상시 대기로 성수기 부킹 부담 최소화</p>
+                </div>
+            </div>
+
+            <!-- 골프텔 비교 문제 해결 서사 추가 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white border p-6 rounded-xl">
+                    <p class="text-gray-400 font-bold m-desc">❌ 일반 골프텔 구조</p>
+                    <p class="m-subtitle text-gray-800 my-1">골프 ➔ 숙소 ➔ 끝</p>
+                    <p class="m-desc text-gray-500 font-medium">골프장 내부 숙소에만 갇혀 저녁 시간마다 할 게 없고 단조로운 일정</p>
+                </div>
+                <div class="bg-emerald-950 p-6 rounded-xl text-white">
+                    <p class="text-gold font-bold m-desc">✨ 쿠마CC 전용 인프라 구조</p>
+                    <p class="m-subtitle text-white my-1">골프 ➔ 온천 ➔ 맛집 ➔ 이자카야 ➔ 숙소</p>
+                    <p class="m-desc class text-slate-300 font-medium">히토요시 시내 중심가 인프라 연계로 저녁 여정까지 자유롭게 만끽</p>
+                </div>
+            </div>
+
+            <!-- 히토요시 시내 인프라 및 접근성 명세 카드화 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 m-desc font-medium text-gray-700">
+                <div class="bg-white p-5 rounded-xl border">
+                    <p class="m-subtitle text-gray-900 font-bold mb-1.5">✈️ 구마모토 직항 및 편리한 노선</p>
+                    <p class="m-body font-bold text-gray-800 mb-1">• 인천공항 (대한항공, 티웨이 등) 직항편 상시 운항</p>
+                    <p class="m-body font-bold text-gray-800 mb-1">• 김해공항 (이스타항공 등) 다수 직항 노선 완비</p>
+                    <p class="m-body font-bold text-gray-800">• 약 1시간 30분의 짧은 비행으로 겨울 골프 최적지 진입</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border">
+                    <p class="m-subtitle text-gray-900 font-bold mb-1.5">🍣 히토요시 시내 생활 인프라 완비</p>
+                    <p class="m-desc text-gray-600 leading-relaxed">라운드 종료 후 시내 인접으로 천연 온천욕, 미식 맛집, 이자카야는 물론 대형 편의점, 종합 병원, 렌터카 센터 등 장기 체류에 필요한 모든 인프라를 편하게 누립니다. 숙소 역시 제휴 호텔은 물론 개인이 원하는 곳을 직접 자유 선택할 수 있습니다.</p>
+                </div>
+            </div>
+
+            <!-- 풀 송영 세로 이동 동선 명세 -->
+            <div class="bg-white p-5 rounded-xl border border-gray-200 mt-6 font-bold text-center max-w-xl mx-auto">
+                <h4 class="m-subtitle text-gray-950 mb-3">🚐 전 일정 풀 송영 연계 지원</h4>
+                <div class="flex justify-center items-center gap-3 m-body text-emerald-700 bg-slate-50 py-2 rounded-lg border">
+                    <span>공항</span><span>▶</span><span>호텔</span><span>▶</span><span>골프장</span><span>▶</span><span>호텔</span><span>▶</span><span>공항</span>
+                </div>
+                <p class="m-desc text-gray-500 font-medium mt-2">체류 기간 내 발생하는 모든 이동 동선 차량 편의를 밀착 지원합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 중도 유도 버튼 -->
+    <div class="bg-white text-center py-6 border-b border-gray-100">
+        <a href="#inquiry" class="inline-block bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-xl m-desc hover:bg-emerald-700 transition">
+            💬 내게 맞는 회원권 상담받기
+        </a>
+    </div>
+
+    <!-- 라이프스타일 혜택 명세 (달라지는 삶 상상) -->
+    <section id="lifestyle-benefits" class="bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">회원권 하나로 누리는 일상의 변화</h2>
+            </div>
+            <div class="max-w-2xl mx-auto space-y-3.5 m-body text-gray-800 font-bold">
+                <p class="flex items-center gap-3 bg-slate-50 p-3.5 rounded-xl border">🔹 평일 갑자기 여유가 생겼을 때 부담 없이 바로 떠날 수 있습니다.</p>
+                <p class="flex items-center gap-3 bg-slate-50 p-3.5 rounded-xl border">🔹 정해진 골프장 안에만 갇혀 골프만 치고 돌아오지 않습니다.</p>
+                <p class="flex items-center gap-3 bg-slate-50 p-3.5 rounded-xl border">🔹 라운드가 끝난 오후에는 여유로운 천연 온천욕을 즐깁니다.</p>
+                <p class="flex items-center gap-3 bg-slate-50 p-3.5 rounded-xl border">🔹 저녁마다 로컬 맛집과 매력적인 이자카야를 탐방합니다.</p>
+                <p class="flex items-center gap-3 bg-slate-50 p-3.5 rounded-xl border">🔹 사계절 기후에 맞춰 각기 다른 아름다운 일본을 경험합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 회원권 유형 구분 매칭 가이드 -->
+    <section id="recommendation-guide" class="bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">나에게 맞는 회원권 유형은?</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-gray-200">
+                    <h4 class="m-subtitle text-gray-950 mb-1">🏢 법인 의전용</h4>
+                    <p class="m-desc text-gray-600 mb-2">4인 무기명 위임 구조 적용</p>
+                    <span class="m-desc font-bold text-emerald-600">➔ TCM 다이아몬드 권장</span>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200">
+                    <h4 class="m-subtitle text-gray-950 mb-1">💑 부부 동반</h4>
+                    <p class="m-desc text-gray-600 mb-2">실속형 2인 플레이 형태</p>
+                    <span class="m-desc font-bold text-amber-600">➔ 쿠마CC 실버 권장</span>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200">
+                    <h4 class="m-subtitle text-gray-950 mb-1">⛳ 고정 팀 운영</h4>
+                    <p class="m-desc text-gray-600 mb-2">기명1+무기명3 고정 4인 기준</p>
+                    <span class="m-desc font-bold text-amber-600">➔ 쿠마CC 골드 권장</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 회원권 구성 한눈에 보기 명세 테이블 형태로 간결화 -->
+    <section id="product-details" class="bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">회원권 구성 한눈에 보기</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-xl border">
+                    <h3 class="m-subtitle text-slate-900 mb-2 pb-2 border-b">🌐 TYPE A. TCM 프리미엄 통합권</h3>
+                    <ul class="space-y-1.5 m-desc text-gray-600 font-medium">
+                        <li>• <strong>이용 코스 :</strong> 일본 5개 권역 제휴 32개 명문 코스</li>
+                        <li>• <strong>연계 숙소 :</strong> 주요 도심 권역 특급 제휴 호텔 매칭</li>
+                        <li>• <strong>예약 방식 :</strong> 한국 부킹 데스크를 통한 사전 확정 방식</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl border">
+                    <h3 class="m-subtitle text-emerald-950 mb-2 pb-2 border-b">⛳ TYPE B. 쿠마CC 거점 마스터권</h3>
+                    <ul class="space-y-1.5 m-desc text-gray-600 font-medium">
+                        <li>• <strong>이용 코스 :</strong> 정규 챔피언십 포함 구마모토 연계 통합 63홀</li>
+                        <li>• <strong>운영 방식 :</strong> 전동 승용 카트 페어웨이 진입 기본 승인</li>
+                        <li>• <strong>연계 숙소 :</strong> 전통 온천 호텔 및 특급 골프 리조트 빌리지</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [STEP 5: 가격 및 특전] 분양가 및 실구매가 매칭 노출 섹션 -->
+    <section id="story-pricing" class="bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">7월 20일 이전 가입하면 받을 수 있는 혜택</h2>
+            </div>
+            
+            <!-- 창립 특전 결합 배너 명세 -->
+            <div class="max-w-2xl mx-auto bg-slate-900 border-2 border-gold rounded-2xl p-6 text-center text-white mb-10">
+                <p class="text-2xl mb-1">🎁</p>
+                <h3 class="m-subtitle text-gold font-black">7월 20일까지 창립 한정 프로모션</h3>
+                
+                <div class="my-4 text-left max-w-md mx-auto m-desc text-slate-300 space-y-1 border-b border-gray-800 pb-3 font-bold">
+                    <p>✔️ 창립 1차 분양자 대상 특별 페이백 혜택</p>
+                    <p>✔️ 매년 청구되던 연회비 평생 전액 영구 면제</p>
+                    <p>✔️ 해당 차수 한정 구좌 소진 시 마감 연계</p>
+                    <p>✔️ 한정 구좌 마감 이후에는 즉시 분양가 인상 예정</p>
+                </div>
+                
+                <!-- 실구매가 다운그레이드 각인 포맷 유지 -->
+                <div class="space-y-2.5 max-w-sm mx-auto m-body font-bold text-left">
+                    <div class="border-b border-gray-800 pb-2">
+                        <div class="flex justify-between text-slate-400 text-xs line-through"><span>TCM 다이아몬드 정상가</span><span>2,970만원</span></div>
+                        <div class="flex justify-between mt-0.5"><span class="text-slate-200">최종 실구매가</span><span class="text-gold">2,870만원 <span class="text-xs font-medium text-slate-400">(100만 페이백)</span></span></div>
+                    </div>
+                    <div class="border-b border-gray-800 pb-2">
+                        <div class="flex justify-between text-slate-400 text-xs line-through"><span>TCM 골드 정상가</span><span>1,980만원</span></div>
+                        <div class="flex justify-between mt-0.5"><span class="text-slate-200">최종 실구매가</span><span class="text-gold">1,930만원 <span class="text-xs font-medium text-slate-400">(50만 페이백)</span></span></div>
+                    </div>
+                    <div class="border-b border-gray-800 pb-2">
+                        <div class="flex justify-between text-slate-400 text-xs line-through"><span>쿠마CC 골드 정상가</span><span>1,650만원</span></div>
+                        <div class="flex justify-between mt-0.5"><span class="text-slate-200">최종 실구매가</span><span class="text-gold">1,550만원 <span class="text-xs font-medium text-slate-400">(100만 페이백)</span></span></div>
+                    </div>
+                    <div class="pb-1">
+                        <div class="flex justify-between text-slate-400 text-xs line-through"><span>쿠마CC 실버 정상가</span><span>1,210만원</span></div>
+                        <div class="flex justify-between mt-0.5"><span class="text-slate-200">최종 실구매가</span><span class="text-gold">1,160만원 <span class="text-xs font-medium text-slate-400">(50만 페이백)</span></span></div>
+                    </div>
+                </div>
+                <div class="w-full border-b border-gray-700 my-3"></div>
+                <p class="m-desc text-slate-400">※ 해당 기간 내 최종 계약 승인 고객 대상 적용</p>
+            </div>
+
+            <!-- 분양가 카드 리스트 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-6">
+                <div class="membership-card bg-white rounded-xl p-5 border flex flex-col justify-between">
+                    <div>
+                        <h4 class="m-subtitle text-gray-900 mb-1">TCM 통합 골드</h4>
+                        <div class="m-title text-emerald-900 tracking-tighter mb-3">1,980<span class="m-desc text-gray-400 font-bold ml-0.5">만원</span></div>
+                        <ul class="m-desc text-gray-600 space-y-1.5 border-t pt-3 font-bold">
+                            <li>👤 기명 1인 + 무기명 3인 조합</li>
+                            <li>🌐 일본 전역 제휴 32개 코스 평생 사용</li>
+                            <li>💰 평생 연회비 없음</li>
+                            <li>🔁 양도 가능</li>
+                            <li>🏢 법인 가능</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="membership-card bg-white rounded-xl p-5 border-2 border-emerald-500 flex flex-col justify-between relative">
+                    <div class="absolute -top-3 right-6 bg-emerald-500 text-white px-2.5 py-0.5 rounded-full text-[11px] font-black">법인 추천</div>
+                    <div>
+                        <h4 class="m-subtitle text-gray-900 mb-1">TCM 통합 다이아몬드</h4>
+                        <div class="m-title text-emerald-900 tracking-tighter mb-3">2,970<span class="m-desc text-gray-400 font-bold ml-0.5">만원</span></div>
+                        <ul class="m-desc text-gray-600 space-y-1.5 border-t pt-3 font-bold">
+                            <li>👥 4인 완전 무기명 위임 권한</li>
+                            <li>🌐 일본 전역 제휴 32개 코스 평생 사용</li>
+                            <li>💰 평생 연회비 없음</li>
+                            <li>🔁 상속 및 승계 보장</li>
+                            <li>🏢 법인 비용 처리 최적화</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="membership-card bg-white rounded-xl p-5 border flex flex-col justify-between">
+                    <div>
+                        <h4 class="m-subtitle text-gray-900 mb-1">쿠마회원권 실버</h4>
+                        <div class="m-title text-amber-900 tracking-tighter mb-3">1,210<span class="m-desc text-gray-400 font-bold ml-0.5">만원</span></div>
+                        <ul class="m-desc text-gray-600 space-y-1.5 border-t pt-3 font-bold">
+                            <li>👤 기명 1인 + 무기명 1인 구조</li>
+                            <li>🌐 구마모토 연계 통합 63홀 권리</li>
+                            <li>💰 평생 연회비 없음</li>
+                            <li>🏎️ 카트 페어웨이 진입 가능</li>
+                            <li>🔁 양도 가능</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="membership-card bg-white rounded-xl p-5 border-2 border-amber-400 flex flex-col justify-between">
+                    <div>
+                        <h4 class="m-subtitle text-gray-900 mb-1">쿠마회원권 골드</h4>
+                        <div class="m-title text-amber-900 tracking-tighter mb-3">1,650<span class="m-desc text-gray-400 font-bold ml-0.5">만원</span></div>
+                        <ul class="m-desc text-gray-600 space-y-1.5 border-t pt-3 font-bold">
+                            <li>👤 기명 1인 + 무기명 3인 최적화</li>
+                            <li>🌐 구마모토 연계 통합 63홀 권리</li>
+                            <li>💰 평생 연회비 없음</li>
+                            <li>🏎️ 카트 페어웨이 진입 가능</li>
+                            <li>📄 정식 실물 증서 발급</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <a href="#inquiry" class="block w-full bg-emerald-600 text-white text-center font-bold py-4 rounded-xl m-body hover:bg-emerald-700 transition">
+                    창립 혜택 신청하기 ➔
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 실제 이용 일정 예시 스케줄표 (연계 복구) -->
+    <section id="story-trip-calendar" class="bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="m-title text-gray-900">입회 후 실제 이용 일정 예시</h2>
+                <p class="m-body text-gray-500 mt-2">회원권 하나로 누리는 2박 3일 표준 스케줄입니다.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-medium text-sm">
+                <div class="bg-slate-900 text-white p-6 rounded-xl border border-gold">
+                    <div class="font-bold text-gold m-subtitle mb-2">DAY 1. 출국 및 체크인</div>
+                    <p class="m-desc text-slate-300 mb-1">• 오전 직항 노선 출국 (1~2시간 소요)</p>
+                    <p class="m-desc text-slate-300 mb-1">• 전용 셔틀 차량 매칭 후 호텔 이동</p>
+                    <p class="m-desc text-slate-300">• 고급 특식 제공 및 온천 자유 시간</p>
+                </div>
+                <div class="bg-slate-900 text-white p-6 rounded-xl border border-gold">
+                    <div class="font-bold text-gold m-subtitle mb-2">DAY 2. 회원 전용 라운드</div>
+                    <p class="m-desc text-slate-300 mb-1">• 호텔 조식 완료 후 명문 코스로 이동</p>
+                    <p class="m-desc text-slate-300 mb-1">• 18홀 라운딩 (2인 라운드 상시 지원)</p>
+                    <p class="m-desc text-slate-300">• 라운드 종료 후 온천욕 및 미식 관광</p>
+                </div>
+                <div class="bg-slate-900 text-white p-6 rounded-xl border border-gold">
+                    <div class="font-bold text-gold m-subtitle mb-2">DAY 3. 라운드 후 복귀</div>
+                    <p class="m-desc text-slate-300 mb-1">• 체크아웃 완료 후 18홀 추가 라운드</p>
+                    <p class="m-desc text-slate-300 mb-1">• 클럽하우스 중식 포함 (회원 기본 0엔)</p>
+                    <p class="m-desc text-slate-300">• 전용 차량으로 공항 이동 후 복귀</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [6] FAQ SECTION (초압축 규칙 수렴 및 4개 요구 문항 전격 반영 완료) -->
+    <section id="faq" class="bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="m-title mb-8 text-center text-gray-900">자주 묻는 질문</h2>
+            <div class="space-y-3 m-desc font-medium">
+                <!-- 대표님 요청 필수 지정 질문 4선 -->
+                <div class="bg-white p-4 rounded-xl border border-emerald-100">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 회원권은 언제부터 사용할 수 있나요?</h4>
+                    <p class="text-gray-600">A. 입회 대금 납부 및 증서 발급이 완료되는 즉시 전담 데스크를 통해 예약 이용 가능합니다.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-100">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 예약은 얼마나 전에 하면 되나요?</h4>
+                    <p class="text-gray-600">A. 주중 및 주말 라운드 희망일 기준 최소 2주~1달 전 접수 시 가장 수월하게 선점 완료됩니다.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-100">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 동반자는 회원가가 적용되나요?</h4>
+                    <p class="text-gray-600">A. 네. 선택하신 구좌 세부 규정(무기명 범위)에 따라 동반자 전원 동일 우대 회원가가 연계 적용됩니다.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-100">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 법인 명의도 가능한가요?</h4>
+                    <p class="text-gray-600">A. 네. 정식 세금계산서 전액 발행을 원칙으로 하여 법인 자산 등록 및 회계 비용 처리가 가능합니다.</p>
+                </div>
+                <!-- 기존 표준 복구 문항 -->
+                <div class="bg-white p-4 rounded-xl border">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 양도 가능한가요?</h4>
+                    <p class="text-gray-600">A. 네. 규정에 따라 양도 및 명의 변경이 가능합니다.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 일본어를 못해도 되나요?</h4>
+                    <p class="text-gray-600">A. 네. 예약부터 현지 이용까지 전담 한국어 실무망으로 지원됩니다.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 혼자 가도 되나요?</h4>
+                    <p class="text-gray-600">A. 네. 2인 라운드 규정이 상시 보장되어 외방 시에도 조율을 연계 지원합니다.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border">
+                    <h4 class="font-bold text-emerald-900 mb-1">Q. 숙소는 꼭 지정 호텔을 이용해야 하나요?</h4>
+                    <p class="text-gray-600">A. 아닙니다. 제휴 호텔 우대 외에도 개인이 선호하는 숙소를 직접 자유롭게 예약 이용하실 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [STEP 6: 신청] 통합 상담 신청 폼 -->
+    <section id="inquiry" class="bg-cool relative py-16">
+        <div class="max-w-3xl mx-auto px-4 relative z-10">
+            <div class="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-emerald-100 text-center">
+                <h2 class="m-title mb-2 text-gray-900">창립 구좌 상담 신청</h2>
+                <p class="m-desc text-gray-500 mb-6">구좌 타입을 직접 선택해 주시면 담당자가 잔여 현황을 확인하여 안내해 드립니다.</p>
+
+                <form id="consultForm" class="space-y-4 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" id="userName" name="name" class="w-full p-3.5 bg-gray-50 rounded-xl border-none outline-none m-body font-bold" placeholder="성함" required>
+                        <input type="tel" id="userTel" name="tel" class="w-full p-3.5 bg-gray-50 rounded-xl border-none outline-none m-body font-bold" placeholder="연락처" required>
+                    </div>
+                    <select id="userProduct" name="product" class="w-full p-3.5 bg-gray-50 rounded-xl border-none outline-none m-body font-bold text-emerald-900 appearance-none" required>
+                        <option value="" disabled selected hidden>관심 상품을 선택해주세요</option>
+                        <option value="TCM 통합 골드">TYPE A - TCM 통합 골드 (1,980만)</option>
+                        <option value="TCM 통합 다이아몬드">TYPE A - TCM 통합 다이아몬드 (2,970만)</option>
+                        <option value="쿠마CC 실버">TYPE B - 쿠마CC 실버 (1,210만)</option>
+                        <option value="쿠마CC 골드">TYPE B - 쿠마CC 골드 (1,650만)</option>
+                    </select>
+                    <!-- 대표님 요청 지정 플레이스홀더 문안 탑재 -->
+                    <textarea id="userMessage" name="message" class="w-full p-3.5 bg-gray-50 rounded-xl border-none outline-none h-32 m-desc font-medium" placeholder="궁금한 점이나 원하시는 이용 형태를 자유롭게 남겨주세요.&#10;&#10;예) 법인 이용 / 부부 이용 / 4인 팀"></textarea>
+                    
+                    <button type="submit" id="submitBtn" class="w-full bg-emerald-600 text-white p-4 rounded-xl m-subtitle font-black hover:bg-emerald-700 transition shadow-md">
+                        가입 조건 및 프로모션 상담 신청하기
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 (인증 운영 법인 명세 규격 탑재 완료) -->
+    <footer class="bg-white py-10 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 text-center text-[11px] md:text-xs text-gray-400 font-medium leading-relaxed">
+            <div class="text-base font-black text-emerald-900 mb-4 italic tracking-tighter">JAPAN GOLF SELECTION</div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto mb-6 text-gray-500 font-bold border-y py-3 text-left px-3 m-desc">
+                <div>📞 대표번호: <span class="text-gray-900">010-2599-1095</span></div>
+                <div>💬 카카오톡: <span class="text-gray-900">투어클럽 분양 본부</span></div>
+                <div>⏰ 운영시간: <span class="text-gray-900">평일 09:00 ~ 18:00</span></div>
+            </div>
+
+            <p class="mb-3">
+                투어클럽 본사 직영센터 | 투어클럽 유회경부장<br>
+                본사 주소: 용인시 수지구 광교중앙로338 B동 809호 / A동 427호 | 사업자번호: 145-88-00771<br>
+                <span class="text-gray-600 font-bold">🏛️ 투어클럽 일본 현지 골프장 본사 직영 공식 예약센터 인증 운영 법인</span>
+            </p>
+            <p class="tracking-wider text-[10px] opacity-70">© 2026 JAPAN GOLF MEMBERSHIP TOUR CLUB. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <div class="fixed bottom-0 left-0 w-full md:hidden bg-white/90 backdrop-blur-xl border-t border-gray-100 p-4 z-[90] sticky-cta flex gap-2">
-        <a id="smsButton" href="#" class="flex-1 bg-slate-900 text-white p-4 rounded-2xl text-center font-black text-sm flex items-center justify-center gap-2">
+    <!-- 모바일 하단 플로팅 바 -->
+    <div class="fixed bottom-0 left-0 w-full md:hidden bg-white/90 backdrop-blur-xl border-t border-gray-100 p-3 z-[90] flex gap-2">
+        <a id="smsButton" href="#" class="flex-1 bg-slate-900 text-white p-3.5 rounded-xl text-center font-bold m-desc flex items-center justify-center gap-1">
             <span>💬</span> 문자 상담
         </a>
-        <a href="#inquiry" class="flex-[2] bg-emerald-600 text-white p-4 rounded-2xl text-center font-black text-sm shadow-xl shadow-emerald-100 flex items-center justify-center">
-            창립 구좌 가입 문의
+        <a href="#inquiry" class="flex-[2] bg-emerald-600 text-white p-3.5 rounded-xl text-center font-bold m-desc flex items-center justify-center">
+            실시간 창립 잔여구좌 신청
         </a>
     </div>
 
     <script>
+        // 모바일 문자 동선 스크립트
         (function() {
             const smsButton = document.getElementById('smsButton');
             const phone = "01025991095"; 
-            const body = "[TCM 회원권] 입회 상담 신청합니다.\n\n성함:\n관심회원권: (골드, 다이아몬드)";
+            const body = "[일본 골프분양] 입회 상담 요청합니다.\n\n성함:\n관심구좌: (TCM통합 / 쿠마CC)";
             const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             smsButton.href = `sms:${phone}${isIOS ? '&' : '?'}body=${encodeURIComponent(body)}`;
         })();
 
-        const consultData = [
-            { name: "이*준", phone: "010-****-5521", product: "다이아몬드" },
-            { name: "박*태", phone: "010-****-8829", product: "골드" },
-            { name: "최*윤", phone: "010-****-1102", product: "골드" },
-            { name: "정*훈", phone: "010-****-3345", product: "다이아몬드" },
-            { name: "김*영", phone: "010-****-7761", product: "골드" },
-            { name: "조*호", phone: "010-****-9982", product: "다이아몬드" }
-        ];
-
-        let tickerIndex = 0;
-        function updateTicker() {
-            const content = document.getElementById('ticker-content');
-            if(!content) return;
-            content.style.opacity = 0;
-            setTimeout(() => {
-                const item = consultData[tickerIndex];
-                content.innerText = `${item.name}님(${item.phone}) ${item.product} 상담 신청 완료`;
-                content.style.opacity = 1;
-                tickerIndex = (tickerIndex + 1) % consultData.length;
-            }, 500);
-        }
-        updateTicker();
-        setInterval(updateTicker, 3000);
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
+        // 텔레그램 데이터 연동 핸들러
         document.getElementById('consultForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.innerText = "상담 신청 중...";
+            btn.innerText = "데이터 송신 중...";
             btn.disabled = true;
 
             const BOT_TOKEN = "8696133005:AAF8Uh6gK0hufHuQyufAkmZhUcjGpYCAxzE";
@@ -735,7 +614,7 @@
             const product = document.getElementById('userProduct').value;
             const message = document.getElementById('userMessage').value;
 
-            const text = `⛳ [TCM 창립 상담 신청]\n👤 성함: ${name}\n📞 연락처: ${tel}\n💎 관심: ${product}\n📝 내용: ${message}`;
+            const text = `⛳ [일본 골프 통합 분양 신청]\n👤 성함: ${name}\n📞 연락처: ${tel}\n💎 선택: ${product}\n📝 내용: ${message}`;
 
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                 method: 'POST',
@@ -744,20 +623,21 @@
             })
             .then(res => {
                 if(res.ok) {
-                    alert("상담 신청이 완료되었습니다. 곧 연락드리겠습니다.");
+                    alert("상담 신청서가 정상적으로 전송되었습니다. 본부 담당자가 신속하게 연락드리겠습니다.");
                     document.getElementById('consultForm').reset();
                     btn.innerText = "상담 신청 완료";
                 } else {
-                    alert("전송 실패. 고객센터로 연락주세요.");
+                    alert("일시적인 수신 오류가 발생했습니다. 하단 대표번호로 즉시 직통 문의가 가능합니다.");
                     btn.disabled = false;
                 }
             })
             .catch(() => {
-                alert("통신 오류가 발생했습니다.");
+                alert("네트워크 연결이 불안정합니다.");
                 btn.disabled = false;
             });
         });
 
+        // 내부 스무스 무브먼트 앵커 링크 스크립트
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
